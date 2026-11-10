@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morfello · Offerte e numeri — v3</title>
+<style>
+  :root{
+    --navy:#071330; --red:#8C1D40; --rose:#DF7F9B;
+    --body-grey:#4F586C; --muted:#8A93A5; --muted-navy:#969DAC;
+    --bg:#FFFFFF; --soft:#F5F7FB; --line:#E3E8EF;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--navy);
+    font-family:-apple-system-body,ui-sans-serif,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--red)}
+  .lang{display:block}
+  .lang[hidden]{display:none!important}
+  .s-it,.s-en{display:none}
+  body[data-lang="it"] .s-it{display:inline}
+  body[data-lang="en"] .s-en{display:inline}
+  .cover{background:var(--navy); color:#fff; padding:46px 22px 40px}
+  .cover-inner{max-width:1040px;margin:0 auto}
+  .brandrow{display:flex;align-items:flex-start;gap:11px}
+  .mark{width:34px;height:34px;border-radius:9px;background:#fff;flex:none;display:grid;place-items:center}
+  .brandrow .word .l1{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .brandrow .word .l2{font-size:11px;color:var(--muted-navy);margin-top:-3px}
+  .cover h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:34px;max-width:680px}
+  .cover .who{color:#B8C4D6;font-size:15px;margin-top:16px;max-width:680px}
+  .chipline{display:flex;flex-wrap:wrap;gap:9px;align-items:center;font-size:12px;color:var(--muted);margin-top:12px}
+  .cover .chipline{color:#B8C4D6;margin-top:20px;max-width:760px}
+  .chip{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:999px}
+  .chip-a{color:#fff;background:var(--red)}
+  .chip-m{color:var(--navy);border:1px solid var(--navy)}
+  .chip-e{color:var(--red);background:rgba(140,29,64,.08);border:1px solid rgba(140,29,64,.25)}
+  .chip-q{color:var(--body-grey);background:var(--soft);border:1px solid var(--line)}
+  .cover .chip-m{color:#fff;border-color:#fff}
+  .cover .chip-e{color:#F0B9CB;background:rgba(223,127,155,.14);border-color:rgba(223,127,155,.4)}
+  .cover .chip-q{color:#DFE6F0;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2)}
+  .topnav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(7px);border-bottom:1px solid var(--line)}
+  .topnav .in{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:4px;padding:9px 14px;overflow-x:auto}
+  .langgroup{margin-left:auto;display:flex;gap:3px;padding-left:10px;border-left:1px solid var(--line);flex:none}
+  .tabbtn{font:inherit;flex:none;border:1px solid transparent;background:transparent;border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:600;cursor:pointer;color:var(--body-grey);white-space:nowrap}
+  .tabbtn:hover{background:var(--soft)}
+  .tabbtn[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  .langbtn{font:inherit;flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 11px;font-size:11.5px;font-weight:800;cursor:pointer;color:var(--body-grey);letter-spacing:.04em}
+  .langbtn[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+  main{max-width:1040px;margin:0 auto;padding:24px 16px 56px}
+  section{padding:26px 24px;border:1px solid var(--line);border-radius:20px;margin-top:26px;background:#fff}
+  .kicker{font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--red)}
+  h2{font-size:clamp(24px,3vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:6px}
+  .lede{color:var(--body-grey);font-size:14.5px;max-width:680px;margin-top:10px}
+  h3{font-size:16px;font-weight:700;margin:20px 0 8px}
+  .small{font-size:12.5px;color:var(--muted)}
+  .defrow{display:grid;grid-template-columns:minmax(0,.34fr) minmax(0,1fr);gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .defrow:last-child{border-bottom:none}
+  .defrow dt{font-weight:700;font-size:14px;color:var(--navy)}
+  .defrow dd{color:var(--body-grey);font-size:13.5px}
+  .defrow dd b{color:var(--navy)}
+  .offer{border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin-top:16px}
+  .offer .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .tag{font-size:10px;font-weight:800;letter-spacing:.07em;padding:3px 9px;border-radius:999px;color:#fff}
+  .t-studio{background:var(--red)} .t-config{background:var(--navy)} .t-vto{background:var(--rose);color:var(--navy)} .t-shared{background:#5A6478}
+  .offer h3{margin:10px 0 2px;font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .offer .what{color:var(--body-grey);font-size:13.5px;max-width:680px}
+  .priceline{display:flex;align-items:baseline;gap:9px;margin-top:14px;flex-wrap:wrap}
+  .priceline .fee{font-size:30px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .priceline .per{font-size:12.5px;color:var(--muted)}
+  .split{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:14px}
+  .split h4{font-size:14px;font-weight:800;border-bottom:1px solid var(--line);padding-bottom:9px;margin-bottom:4px}
+  .split .item{padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--body-grey)}
+  .split .item:last-child{border-bottom:none}
+  .split .item b{color:var(--navy);font-weight:700}
+  .bench{margin-top:14px;border:1px dashed rgba(7,19,48,.25);background:var(--soft);border-radius:12px;padding:12px 15px}
+  .bench h4{font-size:12.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+  .bench p{font-size:12.5px;color:var(--body-grey)}
+  .bench p b{color:var(--navy)}
+  .keypkg{border:2px solid var(--red);border-radius:20px;background:rgba(140,29,64,.04);padding:18px 20px;margin-top:16px}
+  .keypkg .kprow{padding:14px 0;border-bottom:1px solid rgba(140,29,64,.25)}
+  .keypkg .kprow:last-child{border-bottom:none}
+  .keypkg dt{font-size:16px;font-weight:800;color:var(--navy)}
+  .keypkg dd{color:var(--body-grey);font-size:13.5px;margin-top:5px}
+  .ctabanner{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:14px;padding:10px 22px;border-radius:4px;margin-top:20px}
+  .notestrip{border-top:1px solid var(--line);margin-top:20px;padding-top:13px;color:var(--body-grey);font-size:13.5px}
+  .callout{border-left:4px solid var(--red);background:rgba(140,29,64,.05);padding:12px 16px;border-radius:0 12px 12px 0;font-size:13.5px;margin-top:16px}
+  .callout.navy{border-color:var(--navy);background:var(--soft)}
+  .callout ul{padding-left:18px;margin-top:6px}
+  .callout li{margin-bottom:6px}
+  .quoteline{border-left:3px solid var(--navy);padding:6px 0 6px 14px;color:var(--navy);font-weight:700;font-size:14px;margin-top:10px}
+  .mr-flow-svg{width:100%;display:block;margin:0 0 12px}
+  .mr-flow-svg text{fill:var(--navy);font-size:12px;font-family:inherit}
+  .mr-flow-svg .sub{fill:var(--muted)}
+  .scbtn{font:inherit;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--navy);background:var(--soft);cursor:pointer;font-size:13px;white-space:nowrap}
+  .scbtn[aria-pressed="true"]{border-color:var(--red);color:var(--red);background:rgba(140,29,64,.08)}
+  .intcard{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-top:14px;background:#fff}
+  .intcard h4{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800}
+  .intcard h4 code{font-size:11px;font-weight:800;padding:2px 7px;border-radius:999px;background:var(--navy);color:#fff;letter-spacing:.05em}
+  .intcard p{font-size:13.5px;color:var(--body-grey)}
+  .intcard p b{color:var(--navy)}
+  .tblwrap{width:100%;overflow-x:auto;scrollbar-width:thin}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--navy)}
+  td{padding:9px 16px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body-grey)}
+  tr:last-child td{border-bottom:none}
+  td.num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);white-space:nowrap}
+  td.dim{font-size:12px;color:var(--muted)}
+  .simgrid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:14px}
+  .simgrid .inp{margin:10px 0}
+  .simgrid input[type=range]{width:100%;accent-color:var(--red)}
+  .simgrid label{font-size:12.5px;font-weight:700;display:block;margin-bottom:4px}
+  .simout{background:var(--navy);color:#fff;border-radius:var(--radius);padding:16px 18px}
+  .simout .big{font-size:28px;font-weight:800;font-variant-numeric:tabular-nums}
+  .simout .ln{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.2)}
+  .simout .ln:last-child{border-bottom:none}
+  .simout .ln b{font-variant-numeric:tabular-nums}
+  input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent}
+  input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--line);border-radius:999px}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;border-radius:50%;background:var(--red);margin-top:-6.5px;border:3px solid #fff;box-shadow:0 1px 4px rgba(7,19,48,.3)}
+  input[type=range]::-moz-range-track{height:4px;background:var(--line);border-radius:999px}
+  input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:var(--red);border:3px solid #fff}
+  .simopts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .optbtn{font:inherit;cursor:pointer;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:6px 13px;background:#fff;color:var(--body-grey)}
+  .optbtn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  .source{max-width:1040px;margin:0 auto 40px;padding:0 16px;color:var(--muted);font-size:12px}
+  @media (max-width:620px){
+    .defrow{grid-template-columns:1fr;gap:4px}
+    section{padding:20px 16px}
+  }
+  @media print{
+    .topnav{display:none}
+    .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section,.offer,.keypkg,.intcard{break-inside:avoid-page}
+  }
+</style>
+</head>
+<body data-lang="it">
+
+<nav class="topnav"><div class="in" role="tablist" aria-label="Sezioni">
+  <button type="button" class="tabbtn" data-panel="gloss" aria-selected="true" aria-controls="pan-gloss-it pan-gloss-en"><span class="s-it">Glossario</span><span class="s-en">Glossary</span></button>
+  <button type="button" class="tabbtn" data-panel="off" aria-selected="false" aria-controls="pan-off-it pan-off-en"><span class="s-it">Le tre offerte</span><span class="s-en">The three offers</span></button>
+  <button type="button" class="tabbtn" data-panel="reply" aria-selected="false" aria-controls="pan-reply-it pan-reply-en"><span class="s-it">Ruoli di Reply</span><span class="s-en">Reply roles</span></button>
+  <button type="button" class="tabbtn" data-panel="costi" aria-selected="false" aria-controls="pan-costi-it pan-costi-en"><span class="s-it">Costi per livello</span><span class="s-en">Costs by level</span></button>
+  <button type="button" class="tabbtn" data-panel="sim" aria-selected="false" aria-controls="pan-sim-it pan-sim-en"><span class="s-it">Simulatore</span><span class="s-en">Simulator</span></button>
+  <div class="langgroup" aria-label="Lingua / Language">
+    <button type="button" class="langbtn" data-lang="it" aria-pressed="true">IT</button>
+    <button type="button" class="langbtn" data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div></nav>
+
+<main class="lang" data-lang="it">
+
+  <header class="cover" style="margin:-24px -16px 4px;border-radius:0">
+    <div class="cover-inner">
+      <div class="brandrow">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 12 12 2.6A9.4 9.4 0 0 0 2.6 12z" fill="#DF7F9B"/><path d="M12 12 21.4 12A9.4 9.4 0 0 0 12 2.6z" fill="#071330"/><path d="M12 12l0 9.4A9.4 9.4 0 0 0 21.4 12z" fill="#8C1D40"/></svg>
+        </span>
+        <div class="word"><div class="l1">Morfello</div><div class="l2">by Suprora</div></div>
+      </div>
+      <h1>Le tre offerte Morfello, in numeri.</h1>
+      <p class="who">Morfello Studio, Morfello 3D Configurator e Morfello Virtual Try-On: perimetro, prezzi e costi per ciascuna offerta &mdash; con l'opzione di combinazione.</p>
+      <div class="chipline">
+        <span class="chip chip-a">A</span> numeri reali dichiarati da Amir
+        <span class="chip chip-m">M</span> benchmark pubblici (40+ fonti, 2026)
+        <span class="chip chip-e">E</span> stime Suprora = ore di Amir +15%
+        <span class="chip chip-q">?</span> ancora da misurare
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ GLOSSARIO IT ============ -->
+  <section id="pan-gloss-it" data-panel="gloss" role="tabpanel" aria-label="Glossario">
+    <span class="kicker">Prima di tutto</span>
+    <h2>Glossario: le tre offerte e i termini del modello</h2>
+    <p class="lede">Definizioni operative, così le usiamo in ogni scheda che segue.</p>
+
+    <div class="keypkg">
+      <p class="small" style="text-transform:uppercase;letter-spacing:.08em;color:var(--red);font-weight:800">La famiglia Morfello — le tre offerte</p>
+      <dl>
+        <div class="kprow">
+          <dt><span class="tag t-studio">STUDIO</span>&nbsp; Morfello Studio</dt>
+          <dd><b>Servizio di produzione degli asset</b>: dalle foto del cliente ai modelli 3D, texture, parti segmentate, assegnazione di materiali e prezzi. Si vende <b>a lotto</b> (quantità esplicite), non ad abbonamento.</dd>
+        </div>
+        <div class="kprow">
+          <dt><span class="tag t-config">CONFIGURATOR</span>&nbsp; Morfello 3D Configurator</dt>
+          <dd><b>Prodotto software + implementazione</b>: esperienze 3D interattive sul canale del cliente, materiali e varianti configurabili, prezzo dinamico al checkout. Si vende con <b>attivazione</b> (perimetro) e <b>canone</b>.</dd>
+        </div>
+        <div class="kprow">
+          <dt><span class="tag t-vto">VTO</span>&nbsp; Morfello Virtual Try-On</dt>
+          <dd><b>Strato di prova (ipotesi)</b>: le prove visive su foto, contenuti marketing e sessioni in tempo reale via fotocamera, con accesso e eventuale consumo. Categoria, canale e capacità del motore ancora da validare: oggi è un'ipotesi operativa, non un'offerta confermata.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <h3>Altri termini</h3>
+    <dl>
+      <div class="defrow"><dt>Modello 3D</dt><dd>L'asset web-ready di un prodotto: geometria + materiali PBR + resa, pronto per configuratore, preventivo o prova virtuale. Il primo si costruisce dalle foto del cliente.</dd></div>
+      <div class="defrow"><dt>Famiglia configurabile</dt><dd>Una <b>linea di prodotto</b> resa configurabile con un solo set di regole: ~20 scelte cablate (rivestimenti, varianti, componenti, accessori). Una famiglia non è un singolo prodotto.</dd></div>
+      <div class="defrow"><dt>Variante — materiale/colore</dt><dd>Cambio di tessuto o colore senza modificare la geometria: richiede l'elaborazione della texture (~1 h se la qualità delle immagini è ottima, ~3 h se servono immagini migliori dal cliente).</dd></div>
+      <div class="defrow"><dt>Variante — componente alternativo</dt><dd>Cambia una <b>parte della geometria</b> (es. schienale alto/basso): lavoro strutturale, <b>3&ndash;5 h</b> quando serve una configurazione speciale per la variante; le combinazioni ammesse si concordano con il cliente.</dd></div>
+      <div class="defrow"><dt>Modifica dimensionale &ne; variante</dt><dd>Cambiare le dimensioni non è una "variante già definita": richiede una valutazione dedicata prima di essere quotata.</dd></div>
+      <div class="defrow"><dt>Parte segmentata</dt><dd>Una zona del modello 3D (es. tomaia, suola, telaio) resa indipendentemente configurabile. La <b>segmentazione</b> è l'attività più pesante della pipeline: <b>le ore di segmentazione non si riducono per i modelli successivi</b>.</dd></div>
+      <div class="defrow"><dt>Assegnazione materiali + prezzi</dt><dd>Coppia di lavoro in Morfello Studio: ad ogni parte segmentata si assegna un materiale (e le sue varianti) e il <b>prezzo da applicare</b> secondo il gestionale del cliente.</dd></div>
+      <div class="defrow"><dt>Perimetro</dt><dd>Cosa è compreso nell'offerta: <b>marchi, siti o canali, catalogo attivo, utilizzatori e modalità di accesso</b>. Un perimetro extra è un'attivazione nuova, anche se piccola.</dd></div>
+      <div class="defrow"><dt>Kit avvio — lotto</dt><dd>Il primo ordine di Morfello Studio: pipeline + libreria materiali del cliente + primo modello + accettazione del lotto. È un <b>lotto con quantità esplicite</b>, non un abbonamento.</dd></div>
+      <div class="defrow"><dt>Attivazione, canone, add-on</dt><dd>Attivazione: una volta, per perimetro. Canone: hosting, aggiornamenti e supporto, mensile. Add-on: lavoro aggiuntivo a prezzo fisso (es. nuovo modello, variante, integrazione extra).</dd></div>
+      <div class="defrow"><dt>Tariffa interna — le tre valute</dt><dd><b>12 €/h</b> = costo reale Suprora [A]; <b>16&ndash;20 €/h</b> = mediana Italiana [A]; <b>47,5 €/h</b> = ipotesi "generosa" usata per confronti US/UK [A]. La <b>stima Suprora (E)</b> = ore di Amir con <b>+15% di margine di sicurezza</b>.</dd></div>
+      <div class="defrow"><dt>SFCC &mdash; Salesforce Commerce Cloud</dt><dd>La piattaforma B2C e-commerce: catalogo, varianti, prezzi, promozioni, carrello e checkout. Morfello si aggiunge come esperienza di prodotto sopra il sito già esistente (un connettore, non una sostituzione dell'e-commerce).</dd></div>
+      <div class="defrow"><dt>Oracle Xstore (POS)</dt><dd>Il software di cassa e gestione operativa del punto vendita: vendite, pagamenti, scontrini, resi, ricerca articoli. Morfello alimenta esperienze in negozio su tablet (companion app), collegate ai sistemi esistenti.</dd></div>
+    </dl>
+    <div class="notestrip">I chip in tutto il documento: <span class="chip chip-a">A</span> numero reale dichiarato da Amir &middot; <span class="chip chip-m">M</span> benchmark pubblico &middot; <span class="chip chip-e">E</span> stima Suprora (Amir +15%) &middot; <span class="chip chip-q">?</span> ancora da misurare.</div>
+  </section>
+
+  <!-- ============ LE TRE OFFERTE IT ============ -->
+  <section id="pan-off-it" data-panel="off" role="tabpanel" aria-label="Le tre offerte" hidden>
+    <span class="kicker">La famiglia Morfello</span>
+    <h2>Tre offerte che si vendono da sole, e si combinano se serve</h2>
+    <p class="lede">Per ciascuna offerta: che cosa include, i prezzi e, a parte, come si posiziona rispetto ai benchmark di mercato.</p>
+
+    <!-- STUDIO -->
+    <div class="offer">
+      <div class="head"><span class="tag t-studio">STUDIO</span><span class="small">servizio di produzione asset &mdash; lotto, non abbonamento</span></div>
+      <h3>Morfello Studio</h3>
+      <p class="what"><b>Il cliente compra:</b> la produzione coordinata dei propri asset 3D &mdash; dalle foto al modello configurabile, con materiali, parti segmentate e prezzi assegnati.</p>
+      <div class="split">
+        <div>
+          <h4>Funzioni incluse</h4>
+          <div class="item">Generazione del modello 3D da immagini 2D</div>
+          <div class="item">Setup e rifinitura del modello 3D</div>
+          <div class="item">Generazione delle texture da immagini 2D</div>
+          <div class="item">Setup e rifinitura delle texture</div>
+          <div class="item">Variante di colore per ciascuna texture</div>
+        </div>
+        <div>
+          <h4>&hellip; e per la configurabilit&agrave;</h4>
+          <div class="item">Segmentazione del modello 3D</div>
+          <div class="item">Rifinitura della segmentazione</div>
+          <div class="item">Assegnazione dei materiali alle parti segmentate</div>
+          <div class="item">Assegnazione dei prezzi ai materiali specifici</div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee">€ 2.700</span><span class="per">kit avvio, a lotto &mdash; poi add-on <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>Cosa include il kit avvio</h4>
+          <div class="item">Pipeline e impostazione di Morfello Studio &mdash; per lotto</div>
+          <div class="item"><b>Libreria materiali del cliente</b> &mdash; riusabile su tutti i prodotti, e anche fra clienti</div>
+          <div class="item"><b>Primo modello 3D</b> + materiali</div>
+          <div class="item">Revisioni, verifica e accettazione del lotto</div>
+        </div>
+        <div>
+          <h4>Dopo il kit (prezzi fissi per lavoro aggiuntivo)</h4>
+          <div class="item">Modello successivo <b>€ 590</b> &middot; varia con la complessit&agrave; <span class="chip chip-q">?</span></div>
+          <div class="item">Variante colore <b>€ 90</b> &middot; componente <b>€ 390</b> &middot; taglia <b>€ 60</b></div>
+          <div class="item">Nuovo materiale cliente <b>€ 150</b></div>
+          <div class="item">Pulizia foto per lotti <b>€ 120 / 50 foto</b></div>
+        </div>
+      </div>
+      <div class="bench">
+        <h4>Benchmark</h4>
+        <p>Un modello web in agenzia esterna: <b>$140&ndash;1.500</b>; ore dichiarate dai matchup: <b>5&ndash;50 h</b> per fascia <span class="chip chip-m">M</span>. Nella pipeline Morfello: scarpa semplice <b>1&ndash;2 h</b>, borsa/vestiti &ge;10 h <span class="chip chip-a">A</span> &mdash; una <b>compressione 5&ndash;10&times;</b> dovuta all'automazione della segmentazione, che resta valida anche con le ore Amir +15% (scheda Costi per livello).</p>
+      </div>
+    </div>
+
+    <!-- CONFIG -->
+    <div class="offer">
+      <div class="head"><span class="tag t-config">CONFIGURATOR</span><span class="small">prodotto software + implementazione</span></div>
+      <h3>Morfello 3D Configurator</h3>
+      <p class="what"><b>Il cliente compra:</b> la funzionalit&agrave; di configurazione 3D sul proprio canale &mdash; l'utente configura il prodotto, ottiene il prezzo dinamico e un riepilogo pronto per il checkout.</p>
+      <div class="split">
+        <div>
+          <h4>Funzioni incluse</h4>
+          <div class="item">Interfaccia personalizzata: identit&agrave; visiva, workflow e integrazioni per il sito e-commerce o il canale di vendita</div>
+          <div class="item">Esperienza 3D interattiva a 360&deg; con il prodotto</div>
+          <div class="item">Cambio e personalizzazione dei materiali</div>
+        </div>
+        <div>
+          <h4>&hellip; per l'acquisto</h4>
+          <div class="item">Cambio e personalizzazione dei colori dei materiali</div>
+          <div class="item">Cambio <b>prezzo dinamico</b> in base alla scelta dell'utente</div>
+          <div class="item">Riepilogo finale delle scelte e prezzo complessivo</div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee" style="font-size:22px" id="">Ticket al cliente</span><span class="per"><b>2 opzioni di vendita</b> &mdash; nella tabella sotto <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>Perimetro base (nella attivazione)</h4>
+          <div class="item">1 famiglia configurabile, ~20 opzioni in regola</div>
+          <div class="item">1 sito / canale di vendita, identit&agrave; visiva e integrazioni selezionate</div>
+          <div class="item">Onboarding, test e collaudo</div>
+          <div class="item">Hosting, aggiornamenti, supporto 2 h/mese</div>
+        </div>
+        <div>
+          <h4>Add-on</h4>
+          <div class="item">Extra marchio o canale <b>da € 700</b> a ciascuno <span class="chip chip-e">E</span></div>
+          <div class="item">Integrazione con sistemi esterni (e-commerce, gestionali) a ore, <b>da € 55/h</b> <span class="chip chip-e">E</span></div>
+          <div class="item">Asset non compatibili: si producono in Morfello Studio (kit o add-on)</div>
+          <div class="item">Asset compatibili del cliente: verifica visuale 2 h, nessuna produzione <span class="chip chip-e">E</span></div>
+        </div>
+      </div>
+      <h4 style="font-size:14px;font-weight:800;margin-top:18px;border-bottom:1px solid var(--line);padding-bottom:8px">Il deal finale &mdash; due opzioni <span class="chip chip-e">E</span></h4>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Opzione 1 &mdash; Una-tantum</h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Voce</th><th>Prezzo</th></tr></thead>
+        <tbody>
+          <tr><td>Analisi, progettazione, configurazione software, adattamento e-commerce, texturing, pricing definition</td><td class="num">incluso</td></tr>
+          <tr><td>Primi 5 modelli 3D + tutte le texture che servono (se i materiali sono confacenti)</td><td class="num">incluso</td></tr>
+          <tr><td><b>Unica tantum complessiva</b></td><td class="num"><b>€ 5.000&ndash;6.500</b></td></tr>
+        </tbody></table></div>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Opzione 2 &mdash; Setup + Piattaforma</h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Voce</th><th>Prezzo</th></tr></thead>
+        <tbody>
+          <tr><td>Setup: configurazione software, onboarding, e-commerce</td><td class="num">€ 1.500</td></tr>
+          <tr><td>Piattaforma: accesso al Morfello 3D Configurator</td><td class="num">€ 150&ndash;200/m</td></tr>
+          <tr><td>Hosting, aggiornamenti, supporto</td><td class="num">a parte, da quantificare</td></tr>
+        </tbody></table></div>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Modelli aggiuntivi <span class="small">(entrambe le opzioni)</span></h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Modelli aggiuntivi</th><th>Prezzo per modello</th></tr></thead>
+        <tbody>
+          <tr><td>Modelli 6&ndash;15</td><td class="num">€ 200</td></tr>
+          <tr><td>Modelli 16&ndash;40</td><td class="num">€ 150</td></tr>
+          <tr><td>Modelli 41+</td><td class="num">€ 100</td></tr>
+        </tbody></table></div>
+
+      <div class="bench">
+        <h4>Benchmark</h4>
+        <p>Build personalizzate in agenzia: <b>$4&ndash;10k</b> single-product; $10&ndash;30k con multi-opzione e regole <span class="chip chip-m">M</span>. Il 3D gira lato client: costo API <b>€ 0</b> per sessione, solo egress 3&ndash;5 MB <span class="chip chip-m">M</span>. Riferimenti di conversione in mercato: <b>+25&hellip;+94%</b> <span class="chip chip-m">M</span>. R&amp;D reale del motore: <b>240 h</b> <span class="chip chip-a">A</span>.</p>
+      </div>
+    </div>
+
+    <!-- VTO -->
+    <div class="offer">
+      <div class="head"><span class="tag t-vto">VTO</span><span class="small">ipotesi di offerta &mdash; categoria e canale da validare</span></div>
+      <h3>Morfello Virtual Try-On</h3>
+      <p class="what"><b>Il cliente compra:</b> esperienze di prova virtuale del prodotto &mdash; dentro un'immagine generata, come contenuto marketing o in tempo reale via fotocamera, su un canale concordato.</p>
+      <div class="split">
+        <div>
+          <h4>Funzioni incluse</h4>
+          <div class="item">Virtual Try-On su immagine 2D del modello &mdash; contenuti marketing / esperienza di acquisto</div>
+          <div class="item">Virtual Try-On in tempo reale tramite fotocamera &mdash; esperienza utente / acquisto</div>
+        </div>
+        <div>
+          <h4>&hellip; e contenuto</h4>
+          <div class="item">Virtual Try-On dentro un'immagine generata &mdash; contenuti marketing</div>
+          <div class="item">Architettura: alta latenza &asymp;2 &cent;/s, bassa latenza &asymp;4 &cent;/s <span class="chip chip-a">A</span></div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee">da € 2.900</span><span class="per">attivazione (ipotesi) con 500 prove/mese incluse <span class="chip chip-e">E</span></span></div>
+      <div class="priceline"><span class="fee">da € 290</span><span class="per">canone mensile (quota inclusa, extra € 0,09/prova) <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>Da validare prima di vendere</h4>
+          <div class="item">Categoria e canale: e-commerce (foto della persona) oppure in negozio (tablet/Xstore) <span class="chip chip-q">?</span></div>
+          <div class="item">Che cosa richiede il motore: input, numero di foto, latenza <span class="chip chip-q">?</span></div>
+        </div>
+        <div>
+          <h4>Consumi</h4>
+          <div class="item">Prova generata: <b>2&ndash;4 &cent;/s</b>; &asymp;10 s a generazione <span class="chip chip-a">A</span> &rarr; € 0.20&ndash;0.40</div>
+          <div class="item">3 chiamate API per modello <span class="chip chip-a">A</span>; adozione benchmark 10&ndash;20% delle sessioni eleggibili <span class="chip chip-m">M</span></div>
+        </div>
+      </div>
+      <div class="bench">
+        <h4>Benchmark</h4>
+        <p>API di mercato: <b>$0.02&ndash;0.10 per generazione</b> <span class="chip chip-m">M</span>, GPU-second $0.0015&ndash;0.0108 <span class="chip chip-m">M</span>. Studi sulle prove: add-to-cart <b>33% vs 11%</b>, 6,7% di acquisto del prodotto provato <span class="chip chip-m">M</span> <span class="dim">(Genlook Q3-26, con caveat selezione)</span>. Motore: nessuna GPU interna <span class="chip chip-a">A</span>; 92% mobile <span class="chip chip-m">M</span>.</p>
+      </div>
+    </div>
+
+    <div class="ctabanner">Combinazioni: si decide perimetro per perimetro, non si compra un "pacchetto fisso"</div>
+    <p class="small" style="margin-top:8px">Le combinazioni si provano direttamente nel Simulatore (scheda dedicata).</p>
+  </section>
+
+  <!-- ============ REPLY IT ============ -->
+  <section id="pan-reply-it" data-panel="reply" role="tabpanel" aria-label="Ruoli di Reply" hidden>
+    <span class="kicker">Scenari di collaborazione</span>
+    <h2>Ruoli di Reply &mdash; chi fa che cosa, in tre scenari</h2>
+    <p class="lede">A, B e C sono configurazioni di lavoro: nessuna descrive un accordo gi&agrave; raggiunto. Ore, costi e margini vivono nella scheda Costi per livello.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px" role="group" aria-label="Scenario di collaborazione">
+      <button type="button" class="scbtn" data-scenario="a" aria-pressed="true">A &middot; Segnalazione</button>
+      <button type="button" class="scbtn" data-scenario="b" aria-pressed="false">B &middot; Rivendita</button>
+      <button type="button" class="scbtn" data-scenario="c" aria-pressed="false">C &middot; Rivendita e implementazione</button>
+    </div>
+    <h3 style="margin-top:16px">Flussi di pagamento</h3>
+    <div id="mr-money-flow-it"></div>
+    <div id="mr-scenario-status-it" class="small" style="margin-top:12px"></div>
+    <h3>Responsabilit&agrave; da assegnare prima dei prezzi</h3>
+    <dl>
+      <div class="defrow"><dt>Vendita e offerta</dt><dd>Chi qualifica, propone, fattura e gestisce il rinnovo &mdash; dipende dallo scenario.</dd></div>
+      <div class="defrow"><dt>Setup del cliente</dt><dd>In C, Reply esegue configurazione e integrazioni del perimetro per cui &egrave; abilitata; serve abilitazione (strumenti, formazione [E]).</dd></div>
+      <div class="defrow"><dt>Produzione asset</dt><dd>Resta in Morfello Studio (Suprora): autonomia di Reply inizialmente limitata; piena autonomia da valutare <span class="chip chip-q">?</span></dd></div>
+      <div class="defrow"><dt>Prodotto e assistenza</dt><dd>Suprora: aggiornamenti del software e supporto specialistico; Reply: primo contatto se gestisce il cliente.</dd></div>
+      <div class="defrow"><dt>Dati e consumi</dt><dd>Chi gestisce accessi, catalogo, misurazione e conservazione degli input; dei consumi visibili a Reply e al cliente.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:24px">Integrazioni possibili con i canali Reply</h3>
+    <p class="lede">Due piattaforme diverse: <b>SFCC</b> serve soprattutto l'e-commerce; <b>Oracle Xstore</b> serve il negozio fisico. Sono due ambienti nei quali integrare Morfello, non un unico prodotto.</p>
+    <div class="intcard">
+      <h4><code>SFCC</code> Salesforce Commerce Cloud</h4>
+      <p><b>Che cos'&egrave;.</b> Soprattutto Salesforce B2C Commerce: la piattaforma con cui un brand costruisce e gestisce il proprio negozio online &mdash; catalogo, varianti, prezzi, promozioni, carrello, checkout.</p>
+      <p><b>Uso con Morfello (da proporre):</b></p>
+      <ol style="padding-left:20px;font-size:13.5px;color:var(--body-grey)">
+        <li>Il cliente apre la pagina di una scarpa sul sito del brand.</li>
+        <li>Clicca &ldquo;Visualizza in 3D&rdquo;, &ldquo;Personalizza&rdquo; o &ldquo;Prova virtualmente&rdquo;.</li>
+        <li>Morfello gestisce quell'esperienza.</li>
+        <li>Il cliente torna al normale percorso d'acquisto del sito.</li>
+      </ol>
+      <p><b>&ldquo;Connettore Morfello&ndash;SFCC&rdquo;</b> = un'integrazione che collega l'esperienza Morfello ai prodotti e alle varianti del catalogo, ed eventualmente al carrello. <b>Non</b> significa rifare l'e-commerce.</p>
+    </div>
+    <div class="intcard">
+      <h4><code>XSTORE</code> Oracle Retail Xstore Point of Service</h4>
+      <p><b>Che cos'&egrave;.</b> Il software di cassa e di gestione operativa del punto vendita: vendite, pagamenti, scontrini, resi, ricerca articoli e altre attivit&agrave; del negozio. Non &egrave; semplicemente il terminale bancario per pagare con la carta; pu&ograve; girare su postazioni fisse e dispositivi mobili.</p>
+      <p><b>Uso con Morfello (da proporre):</b></p>
+      <ol style="padding-left:20px;font-size:13.5px;color:var(--body-grey)">
+        <li>Il commesso mostra un prodotto su un tablet.</li>
+        <li>Il cliente lo visualizza in 3D, lo configura o usa il Try-On.</li>
+        <li>Il prodotto selezionato passa al flusso di vendita del negozio, se l'integrazione lo consente.</li>
+      </ol>
+      <p><b>&ldquo;Companion app Xstore&rdquo;</b> = un'applicazione di supporto all'esperienza in negozio, collegata ai sistemi esistenti &mdash; non necessariamente una modifica dentro il software di cassa.</p>
+    </div>
+    <div class="callout navy"><b>Per l'incontro con Reply.</b> Il messaggio: <b>Morfello aggiunge un'esperienza di prodotto ai sistemi che i loro clienti usano gi&agrave;, senza pretendere di sostituirli</b>. Reply potrebbe occuparsi dell'integrazione e dei processi del cliente; Suprora del motore Morfello &mdash; una possibile divisione dei ruoli, ancora da concordare.
+      <p class="quoteline">&laquo;Su quale vostro cliente avrebbe pi&ugrave; senso un primo pilota: Try-On nell'e-commerce Salesforce oppure vendita assistita in negozio nell'ecosistema Oracle Xstore?&raquo;</p>
+    </div>
+  </section>
+
+  <!-- ============ COSTI IT ============ -->
+  <section id="pan-costi-it" data-panel="costi" role="tabpanel" aria-label="Costi per livello" hidden>
+    <span class="kicker">Cinque livelli, quattro fonti</span>
+    <h2>Costi: livello per livello, con le informazioni che abbiamo</h2>
+    <p class="lede">Ogni tabella usa le stesse quattro colonne: <span class="chip chip-a">A</span> numeri reali da Amir; <span class="chip chip-e">E</span> stima Suprora = ore di Amir +15%; <span class="chip chip-m">M</span> benchmark pubblici; <span class="chip chip-q">?</span> ancora da misurare. Dove Amir ha fornito solo ore, il costo applicato usa la <b>tariffa reale 12 €/h</b> [A]; alternative: 16&ndash;20 €/h mediana, 47,5 €/h ipotesi (vedi riquadro sotto).</p>
+    <div class="callout navy"><b>Regole del listino (per l'offerta al cliente &mdash; non qui).</b> Il listino vive nelle schede offerta (per Morfello 3D Configurator: <b>4 metodologie a confronto</b>); questa scheda tratta solo <b>costi interni</b>. Regole usate: setup = costo interno &times; 1,35&ndash;1,57 [E] &middot; canone = hosting (&asymp;€ 10&ndash;15/m [M]) + supporto + AI inclusa &middot; margini add-on volutamente sottili (variante colore € 90, extra-prova € 0,09) &middot; le <b>stime [E]</b> = ore di Amir +15%.</div>
+
+    <h3>1 &middot; Sviluppo prodotto (R&amp;D, una volta)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Voce</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Amir +15%</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; Da misurare</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Morfello Studio</b> &mdash; pipeline (6 mesi, 8 mezzi mesi di sforzo reale)</td><td class="num">720&ndash;1000 h &asymp; <b>€ 8.6&ndash;12k</b> [A]</td><td class="num">828&ndash;1150 h &asymp; <b>€ 9.9&ndash;13.8k</b> [E]</td><td class="num">primi lotti in agenzia: $200&ndash;2.000/sku [M]</td><td class="dim">ore di sviluppo residue [?]</td></tr>
+          <tr><td><b>Morfello 3D Configurator</b> &mdash; piattaforma (1 mese)</td><td class="num">240 h &asymp; <b>€ 2.9k</b> [A]</td><td class="num">276 h &asymp; <b>€ 3.3k</b> [E]</td><td class="num">ricostruzione intera <b>€ 12&ndash;35k</b> [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Morfello Virtual Try-On</b> &mdash; motore (svolto da Dcart)</td><td class="num">10 h &asymp; <b>€ 120</b> [A]</td><td class="num">11.5 h &asymp; <b>€ 138</b> [E]</td><td class="num">API alternativa $0.02&ndash;0.10/generazione [M]</td><td class="dim">costo di sostituzione motore se ci separiamo da Dcart [?]</td></tr>
+          <tr><td><b>Strumenti AI di sviluppo</b> (condivisa)</td><td class="num">&ge;50% dell'uso su Morfello (6 mesi); &gt;70% Claude Code [A]</td><td class="dim">&mdash;</td><td class="num">$10&ndash;200/seat/m; stack completo $200&ndash;600/sviluppatore/m [M]</td><td class="dim">separazione dev vs runtime da dashboard [?]</td></tr>
+          <tr><td><b>Esborsi gi&agrave; sostenuti</b></td><td class="num">AWS &asymp;€ 500 di crediti (mix impreciso); API &asymp;€ 300 (da verificare) [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">riparto voce per voce [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2 &middot; Abilitazione Reply (una volta, per canale)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Voce</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Stima Suprora</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; Da misurare</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Formazione + strumenti</b></td><td class="dim">&mdash; non fornito</td><td class="num"><b>40&ndash;80 h &asymp; € 0.5&ndash;1.0k</b> [E @ 12 €/h]</td><td class="dim">&mdash;</td><td class="dim">perimetro autonomo per offerta [?]</td></tr>
+          <tr><td><b>Ambienti di prova</b></td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="num">&asymp;€ 10&ndash;15/m [M]</td><td class="dim">quanti ambienti e per quanto [?]</td></tr>
+          <tr><td><b>Recupero</b></td><td class="dim">&mdash;</td><td class="dim">il costo si ripaga con &asymp;2&ndash;3 prime vendite del canale [E]</td><td class="dim">&mdash;</td><td class="dim">validazione con Reply [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3 &middot; Attivazione del cliente (per nuovo cliente e perimetro)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Voce</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Stima Suprora</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; Da misurare</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Attivazione Morfello 3D Configurator</b> (perimetro base)</td><td class="dim">&mdash; non ancora fornite [?]</td><td class="num"><b>&asymp;80&ndash;150 h &asymp; € 1.0&ndash;1.8k</b> [E @ 12 €/h]</td><td class="num">$4&ndash;10k build single-product [M]</td><td class="dim">ore reali per tipo di cliente [?]</td></tr>
+          <tr><td><b>Attivazione Morfello Virtual Try-On</b> (categoria + canale)</td><td class="dim">&mdash; [?]</td><td class="num"><b>&asymp;30 h &asymp; € 360</b> [E @ 12 €/h]</td><td class="dim">&mdash;</td><td class="dim">ore per altre categorie/canali [?]</td></tr>
+          <tr><td><b>Kit avvio Morfello Studio</b> (pipeline + libreria materiali + primo modello)</td><td class="num">modello 1&ndash;2 h (scarpe) / &ge;10 h (borse) [A]</td><td class="num">+15% &mdash; dettagli in Produzione asset [E]</td><td class="num">$200&ndash;2.000 il primo modello in agenzia [M]</td><td class="dim">ore totali del kit [?]</td></tr>
+          <tr><td><b>Add-on perimetro cliente</b> (canale o marchio extra)</td><td class="dim">&mdash;</td><td class="num"><b>&asymp;10&ndash;14 h &asymp; € 125&ndash;170</b> [E @ 12 €/h]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4 &middot; Produzione asset (per lotto, modello, materiale e variante)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Voce</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Amir +15%</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; Da misurare</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Primo modello &mdash; scarpa semplice</b></td><td class="num"><b>1&ndash;2 h</b> &asymp; € 12&ndash;24 [A]</td><td class="num">1.2&ndash;2.3 h &asymp; € 14&ndash;28 [E]</td><td class="num">10&ndash;28 h (scarpe in agenzia) [M]</td><td class="dim">variabilit&agrave; per modello [?]</td></tr>
+          <tr><td><b>Primo modello &mdash; borsa / vestiti</b></td><td class="num"><b>&ge;10 h</b> &asymp; &ge;€ 120 [A]</td><td class="num">&ge;11.5 h &asymp; &ge;€ 138 [E]</td><td class="num">12&ndash;32 h (fashion goods) [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Modello successivo</b> (la segmentazione non si riutilizza)</td><td class="num">quasi quanto il primo [A]</td><td class="num">+15% [E]</td><td class="num">most studios riutilizzano il 40&ndash;70% [E/M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Variante con configurazione speciale</b> (es. schienale, taglie LIDMAG)</td><td class="num"><b>3&ndash;5 h</b> &asymp; € 36&ndash;60 [A]</td><td class="num">3.5&ndash;5.8 h [E]</td><td class="num">$20&ndash;80 solo texture swap [M]</td><td class="dim">tipologie di rework [?]</td></tr>
+          <tr><td><b>Materiale / texture nuovo</b></td><td class="num"><b>1 h</b> se qualit&agrave; ottima; <b>3 h</b> se servono immagini migliori &asymp; € 12&ndash;36 [A]</td><td class="num">1.2&ndash;3.5 h [E]</td><td class="num">10&ndash;20 min&hellip;1 h semplice; 8&ndash;12 h svBRDF [M]</td><td class="dim">come variano per categoria [?]</td></tr>
+          <tr><td><b>Generazione AI del modello</b> (chiamate esterne)</td><td class="num"><b>€ 1</b> mediana / <b>€ 2</b> max per modello [A]</td><td class="dim">&mdash; costi di mercato reali</td><td class="num">Meshy 20&ndash;35 credit &asymp; $0.40&ndash;0.70 [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Segmentazione (chiamata esterna)</b></td><td class="num"><b>€ 0.40&ndash;1.00</b> [A] &mdash; unit&agrave; probabilmente per prodotto [?]</td><td class="dim">&mdash;</td><td class="num">$0.01&ndash;0.03 per immagine [M]</td><td class="dim">unit&agrave; comune [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5 &middot; Gestione nel tempo (per cliente e per mese)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Voce</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Stima Suprora</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; Da misurare</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Hosting &amp; CDN</b></td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="num">&asymp;€ 10&ndash;15/m (R2 egress $0, CDN $0.01/GB) [M]</td><td class="dim">consumo reale [?]</td></tr>
+          <tr><td><b>Supporto &amp; manutenzione</b></td><td class="dim">&mdash;</td><td class="num">2&ndash;5 h/m &asymp; € 24&ndash;60 [E @ 12 €/h]</td><td class="dim">&mdash;</td><td class="dim">ore per tier reali [?]</td></tr>
+          <tr><td><b>VTO a consumo</b></td><td class="num"><b>2&ndash;4 &cent;/s</b> (alta&lt;bassa latenza) &rarr; € 0.20&ndash;0.40 a generazione (&asymp;10 s); 3 chiamate API per modello [A]</td><td class="num">+15% di buffer su consumo <span class="small">[E]</span></td><td class="num">$0.02&ndash;0.10/generazione [M]</td><td class="dim">classe di latenza per canale [?]</td></tr>
+          <tr><td><b>Traffico lato cliente</b></td><td class="num">quasi ogni visita chiama il backend; stima <b>1&ndash;2M/mese</b>, dati insufficienti [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">metriche da log [?]</td></tr>
+          <tr><td><b>Nessun costo operativo per cliente</b></td><td class="num">non self-hosted, niente manutenzione dedicata [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>In breve.</b> Le ore reali di Amir sono molto sotto il mercato (&ldquo;1 scarpa = 2 ore&rdquo; non &egrave; un errore: &egrave; automazione). La valutazione pi&ugrave; solida dell'investimento sostenuto: <b>970&ndash;1250 h &asymp; € 11.6&ndash;15k</b> [A], <b>€ 13.4&ndash;17.3k</b> con buffer [E]. Manca ancora: ore per il nuovo cliente, ore di sviluppo residue, unit&agrave; della segmentazione, consumo reale [?].</div>
+  </section>
+
+  <!-- ============ SIM IT ============ -->
+  <section id="pan-sim-it" data-panel="sim" role="tabpanel" aria-label="Simulatore" hidden>
+    <span class="kicker">Per le discussioni</span>
+    <h2>Simulatore di combinazione</h2>
+    <p class="lede">Attiva le offerte incluse nella fornitura, muovi tariffa e sconto partner: prezzo, margine e payback si ricalcolano.</p>
+    <div class="simgrid">
+      <div>
+        <div class="simopts" role="group" aria-label="Offerte incluse">
+          <button type="button" class="optbtn" data-off="studio" aria-pressed="false">Kit Morfello Studio</button>
+          <button type="button" class="optbtn" data-off="config" aria-pressed="true">Configurator</button>
+          <button type="button" class="optbtn" data-off="vto" aria-pressed="true">Virtual Try-On</button>
+        </div>
+        <div class="inp">
+          <label>Tariffa interna €/h: <b data-lbl="rate">47,5</b></label>
+          <input type="range" data-kind="rate" min="10" max="60" step="0.5" value="47.5">
+          <span class="small">€ 45&ndash;50 = ipotesi "generosa" &middot; € 16&ndash;20 = mediana IT &middot; € 10&ndash;12 = reale Suprora [A]</span>
+        </div>
+        <div class="inp">
+          <label>Sconto partner sul setup: <b data-lbl="part">0%</b></label>
+          <input type="range" data-kind="part" min="0" max="20" step="2.5" value="0">
+          <span class="small">0% = Suprora vende diretto; 10% = ipotesi canale Reply; quota solo sulla attivazione</span>
+        </div>
+        <div class="inp">
+          <label>Ore di abilitazione Reply: <b data-lbl="ab">0</b></label>
+          <input type="range" data-kind="ab" min="0" max="80" step="4" value="0">
+          <span class="small">40&ndash;80 h se Reply deve essere autonoma sul configuratore [E] &mdash; riduce il margine anno 1</span>
+        </div>
+      </div>
+      <div>
+        <div class="simout">
+          <div class="big" data-out="year1">€ 0</div>
+          <div style="font-size:12px;color:#C3CCDC;margin-bottom:8px">margine eenne-una di Suprora con questa fornitura, prima dell'abilitazione di Reply</div>
+          <div class="ln"><span>Setup: cliente / partner</span><b data-out="sp">&ndash;</b></div>
+          <div class="ln"><span>Canone / costo mensile</span><b data-out="mm">&ndash;</b></div>
+          <div class="ln"><span>Margine canone mensile</span><b data-out="sm">&ndash;</b></div>
+          <div class="ln"><span>Payback della setup con il canone</span><b data-out="pb">&ndash;</b></div>
+        </div>
+        <p class="small" style="margin-top:8px">Le ore di attivazione sono stime benchmark [E]; con i numeri di Amir, il costo interno scende (vedi Costi per livello). Mancanti: ore per cliente [?], utilizzo reale [?].</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div style="max-width:1040px;margin:0 auto 40px;padding:0 16px;color:var(--muted);font-size:12px" class="foot">
+  <span class="s-it">Morfello · Offerte e numeri v3 &mdash; per la discussione con Reply e gli scenari con Sabrina &middot; 8 novembre 2026 &middot; dati reali di Amir (8 nov) e ricerca benchmark 2026-11-07 &middot; file singolo senza dipendenze, STAMPABILE (Ctrl+P)</span>
+</div>
+
+<!-- ================= LAYER EN ================= -->
+<main class="lang" data-lang="en" hidden>
+
+  <header class="cover" style="margin:-24px -16px 4px;border-radius:0">
+    <div class="cover-inner">
+      <div class="brandrow">
+        <span class="mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 12 12 2.6A9.4 9.4 0 0 0 2.6 12z" fill="#DF7F9B"/><path d="M12 12 21.4 12A9.4 9.4 0 0 0 12 2.6z" fill="#071330"/><path d="M12 12l0 9.4A9.4 9.4 0 0 0 21.4 12z" fill="#8C1D40"/></svg>
+        </span>
+        <div class="word"><div class="l1">Morfello</div><div class="l2">by Suprora</div></div>
+      </div>
+      <h1>Morfello's three offers, in numbers.</h1>
+      <p class="who">Morfello Studio, Morfello 3D Configurator and Morfello Virtual Try-On: perimeter, prices and costs for each offer — with the combination option.</p>
+      <div class="chipline">
+        <span class="chip chip-a">A</span> real figures reported by Amir
+        <span class="chip chip-m">M</span> published benchmarks (40+ sources, 2026)
+        <span class="chip chip-e">E</span> Suprora estimates = Amir's hours +15%
+        <span class="chip chip-q">?</span> still to measure
+      </div>
+    </div>
+  </header>
+
+  <!-- GLOSSARY EN -->
+  <section id="pan-gloss-en" data-panel="gloss" role="tabpanel" aria-label="Glossary">
+    <span class="kicker">First, the words</span>
+    <h2>Glossary: the three offers and the model terms</h2>
+    <p class="lede">Working definitions, exactly as we use them in every tab that follows.</p>
+
+    <div class="keypkg">
+      <p class="small" style="text-transform:uppercase;letter-spacing:.08em;color:var(--red);font-weight:800">The Morfello family — the three offers</p>
+      <dl>
+        <div class="kprow">
+          <dt><span class="tag t-studio">STUDIO</span>&nbsp; Morfello Studio</dt>
+          <dd><b>Asset-production service</b>: from the client's photos to 3D models, textures, segmented parts, material and pricing assignment. Sold <b>per lot</b> (explicit quantities), not by subscription.</dd>
+        </div>
+        <div class="kprow">
+          <dt><span class="tag t-config">CONFIGURATOR</span>&nbsp; Morfello 3D Configurator</dt>
+          <dd><b>Software product + implementation</b>: interactive 3D experiences on the client's channel, configurable materials and variants, dynamic pricing at checkout. Sold with an <b>activation</b> (perimeter) and a <b>monthly fee</b>.</dd>
+        </div>
+        <div class="kprow">
+          <dt><span class="tag t-vto">VTO</span>&nbsp; Morfello Virtual Try-On</dt>
+          <dd><b>Try-on layer (hypothesis)</b>: visual try-out via generated images, marketing content and real-time camera sessions, with access and optional usage. Category, channel and engine capability still to validate: today it is an operating hypothesis, not a confirmed offer.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <h3>Other terms</h3>
+    <dl>
+      <div class="defrow"><dt>3D model</dt><dd>A product's web-ready asset: geometry + PBR materials + finish, ready for the configurator, quote or try-on. The first one is built from the client's photos.</dd></div>
+      <div class="defrow"><dt>Configurable family</dt><dd>A <b>product line</b> made configurable with a single ruleset: ~20 wired choices (coatings, variants, components, accessories). A family is not a single product.</dd></div>
+      <div class="defrow"><dt>Variant — material/colour</dt><dd>A different configured state with no geometry change: fabric or colour substitution. It requires the texture pass (~1 h if image quality is excellent, ~3 h if better images are needed from the client).</dd></div>
+      <div class="defrow"><dt>Variant — alternative component</dt><dd>A <b>part of the geometry</b> changes (e.g. high/low backrest): structural work of <b>3&ndash;5 h</b> when a special configuration is needed for the variant; the allowed combinations are agreed with the client.</dd></div>
+      <div class="defrow"><dt>Dimensional change &ne; variant</dt><dd>Changing dimensions is not an "already-defined variant": it requires a dedicated assessment before it can be quoted.</dd></div>
+      <div class="defrow"><dt>Segmented part</dt><dd>A zone of the 3D model (e.g. upper, sole, frame) made independently configurable. <b>Segmentation</b> is the heaviest work of the pipeline: <b>segmentation hours do not shrink for the next models</b>.</dd></div>
+      <div class="defrow"><dt>Material + pricing assignment</dt><dd>A paired job in Morfello Studio: each segmented part gets a material (and its variants) and the <b>price to apply</b> according to the client's management system.</dd></div>
+      <div class="defrow"><dt>Perimeter</dt><dd>What the offer includes: <b>brands, sites or channels, active catalogue, users and access modes</b>. An extra perimeter is a new activation, however small.</dd></div>
+      <div class="defrow"><dt>Starter kit — lot</dt><dd>The first Morfello Studio order: pipeline + client material library + first model + lot acceptance. A <b>lot with explicit quantities</b>, no subscription.</dd></div>
+      <div class="defrow"><dt>Activation, monthly fee, add-on</dt><dd>Activation: once, per perimeter. Monthly fee: hosting, updates and support. Add-on: additional fixed-price work (e.g. new model, variant, extra integration).</dd></div>
+      <div class="defrow"><dt>Internal rate — the three currencies</dt><dd><b>€12/h</b> = Suprora's actual cost [A]; <b>€16&ndash;20/h</b> = Italian market median [A]; <b>€47.5/h</b> = "generous" assumption used for US/UK comparisons [A]. The <b>Suprora estimate (E)</b> = Amir's hours with a <b>+15% safety buffer</b>.</dd></div>
+      <div class="defrow"><dt>SFCC — Salesforce Commerce Cloud</dt><dd>The B2C e-commerce platform: catalogue, variants, prices, promotions, cart and checkout. Morfello adds a product experience on top of the existing site (a connector, not a replacement of the e-commerce).</dd></div>
+      <div class="defrow"><dt>Oracle Xstore (POS)</dt><dd>The store's till and operational management software: sales, payments, receipts, returns, item search. Morfello powers in-store experiences on tablets (companion app), linked to existing systems.</dd></div>
+    </dl>
+    <div class="notestrip">Chips across the document: <span class="chip chip-a">A</span> real number from Amir &middot; <span class="chip chip-m">M</span> published benchmark &middot; <span class="chip chip-e">E</span> Suprora estimate (Amir+15%) &middot; <span class="chip chip-q">?</span> still to measure.</div>
+  </section>
+
+  <!-- OFFERS EN -->
+  <section id="pan-off-en" data-panel="off" role="tabpanel" aria-label="The three offers" hidden>
+    <span class="kicker">The Morfello family</span>
+    <h2>Three offers that sell on their own, combined when needed</h2>
+    <p class="lede">For each offer: what it includes, its prices and, separately, how it positions against market benchmarks.</p>
+
+    <div class="offer">
+      <div class="head"><span class="tag t-studio">STUDIO</span><span class="small">asset-production service — per lot, no subscription</span></div>
+      <h3>Morfello Studio</h3>
+      <p class="what"><b>The client buys:</b> the coordinated production of its 3D assets — from photos to configurable models, with materials, segmented parts and pricing assigned.</p>
+      <div class="split">
+        <div>
+          <h4>Included functions</h4>
+          <div class="item">3D model generation from 2D images</div>
+          <div class="item">3D model set-up and refinement</div>
+          <div class="item">Texturing generation from 2D images</div>
+          <div class="item">Texturing set-up and refinement</div>
+          <div class="item">Colour variation of each texture</div>
+        </div>
+        <div>
+          <h4>&hellip; and for configurability</h4>
+          <div class="item">3D model segmentation</div>
+          <div class="item">Segmentation refinement</div>
+          <div class="item">Material assignment to the specific segmented parts</div>
+          <div class="item">Pricing assignment to the specific materials</div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee">€ 2,700</span><span class="per">starter kit, per lot — then add-ons <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>What the starter kit includes</h4>
+          <div class="item">Morfello Studio pipeline and setup — per lot</div>
+          <div class="item"><b>Client material library</b> — reusable across every product and across clients</div>
+          <div class="item"><b>First 3D model</b> + materials</div>
+          <div class="item">Reviews, check and lot acceptance</div>
+        </div>
+        <div>
+          <h4>After the kit (fixed prices for extra work)</h4>
+          <div class="item">Next model <b>€ 590</b> &middot; varies with complexity <span class="chip chip-q">?</span></div>
+          <div class="item">Colour variant <b>€ 90</b> &middot; component <b>€ 390</b> &middot; size <b>€ 60</b></div>
+          <div class="item">New client material <b>€ 150</b></div>
+          <div class="item">Photo clean-up for batches <b>€ 120 / 50 photos</b></div>
+        </div>
+      </div>
+      <div class="bench">
+        <h4>Benchmarks</h4>
+        <p>A web model at external agencies: <b>$140&ndash;1,500</b>; reported studio hours: <b>5&ndash;50 h</b> per tier <span class="chip chip-m">M</span>. In the Morfello pipeline: simple shoe <b>1&ndash;2 h</b>, bag/clothes &ge;10 h <span class="chip chip-a">A</span> — a <b>5&ndash;10&times; compression</b> from segmentation automation, still valid with Amir's +15% hours (see Costs by level).</p>
+      </div>
+    </div>
+
+    <div class="offer">
+      <div class="head"><span class="tag t-config">CONFIGURATOR</span><span class="small">software product + implementation</span></div>
+      <h3>Morfello 3D Configurator</h3>
+      <p class="what"><b>The client buys:</b> the 3D configuration capability on its own channel — shoppers configure the product, get dynamic pricing and a checkout-ready summary.</p>
+      <div class="split">
+        <div>
+          <h4>Included functions</h4>
+          <div class="item">Personalised interface: visual identity, workflows and integrations for the e-commerce site or sales channel</div>
+          <div class="item">Interactive 360° 3D experience with the product</div>
+          <div class="item">Material change and personalisation</div>
+        </div>
+        <div>
+          <h4>&hellip; for buying</h4>
+          <div class="item">Colour change and personalisation of the materials</div>
+          <div class="item"><b>Dynamic pricing</b> based on the user's choices</div>
+          <div class="item">Final summary of the choices and overall price</div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee" style="font-size:22px">Client ticket</span><span class="per"><b>2 sale options</b> &mdash; in the table below <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>Base perimeter (in the activation)</h4>
+          <div class="item">1 configurable family, ~20 options in rules</div>
+          <div class="item">1 site / sales channel, visual identity and selected integrations</div>
+          <div class="item">Onboarding, testing and acceptance</div>
+          <div class="item">Hosting, updates, support 2 h/month</div>
+        </div>
+        <div>
+          <h4>Add-ons</h4>
+          <div class="item">Extra brand or channel <b>from € 700</b> each <span class="chip chip-e">E</span></div>
+          <div class="item">Integration with external systems (e-commerce, management) at hours, <b>from € 55/h</b> <span class="chip chip-e">E</span></div>
+          <div class="item">Non-compatible assets: produced in Morfello Studio (kit or add-on)</div>
+          <div class="item">Client-supplied compatible assets: visual check 2 h, no production <span class="chip chip-e">E</span></div>
+        </div>
+      </div>
+      <h4 style="font-size:14px;font-weight:800;margin-top:18px;border-bottom:1px solid var(--line);padding-bottom:8px">The final deal &mdash; two options <span class="chip chip-e">E</span></h4>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Option 1 &mdash; One-time</h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Item</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Analysis, design, software configuration, e-commerce adaptation, texturing, pricing definition</td><td class="num">included</td></tr>
+          <tr><td>First 5 3D models + all the textures you need (if suitable materials are provided)</td><td class="num">included</td></tr>
+          <tr><td><b>Total one-time payment</b></td><td class="num"><b>€ 5,000&ndash;6,500</b></td></tr>
+        </tbody></table></div>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Option 2 &mdash; Setup + Platform</h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Item</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>Setup: software configuration, onboarding, e-commerce</td><td class="num">€ 1,500</td></tr>
+          <tr><td>Platform: access to the Morfello 3D Configurator</td><td class="num">€ 150&ndash;200/m</td></tr>
+          <tr><td>Hosting, updates, support</td><td class="num">separate, to be quoted</td></tr>
+        </tbody></table></div>
+
+      <h4 style="margin-top:14px;font-size:14.5px;font-weight:700;color:var(--navy)">Additional models <span class="small">(both options)</span></h4>
+      <div class="tblwrap" style="margin-top:6px"><table>
+        <thead><tr><th>Additional models</th><th>Price per model</th></tr></thead>
+        <tbody>
+          <tr><td>Models 6&ndash;15</td><td class="num">€ 200</td></tr>
+          <tr><td>Models 16&ndash;40</td><td class="num">€ 150</td></tr>
+          <tr><td>Models 41+</td><td class="num">€ 100</td></tr>
+        </tbody></table></div>
+
+      <div class="bench">
+        <h4>Benchmarks</h4>
+        <p>Agency custom builds: <b>$4&ndash;10k</b> single-product; $10&ndash;30k with multi-option rules <span class="chip chip-m">M</span>. The 3D runs client-side: API cost <b>€ 0</b> per session, only egress 3&ndash;5 MB <span class="chip chip-m">M</span>. In-market conversion references: <b>+25&hellip;+94%</b> <span class="chip chip-m">M</span>. Engine's real R&amp;D: <b>240 h</b> <span class="chip chip-a">A</span>.</p>
+      </div>
+    </div>
+
+    <div class="offer">
+      <div class="head"><span class="tag t-vto">VTO</span><span class="small">offer hypothesis — category and channel to validate</span></div>
+      <h3>Morfello Virtual Try-On</h3>
+      <p class="what"><b>The client buys:</b> virtual try-on experiences — inside a generated image, as marketing content or in real time through the camera, on an agreed channel.</p>
+      <div class="split">
+        <div>
+          <h4>Included functions</h4>
+          <div class="item">Virtual try-on over the 2D model image — marketing content / buying experience</div>
+          <div class="item">Virtual try-on in real time through the camera — user experience / buying</div>
+        </div>
+        <div>
+          <h4>&hellip; and content</h4>
+          <div class="item">Virtual try-on inside a generated image — marketing content</div>
+          <div class="item">Architecture: high latency &asymp;2 ¢/s, low latency &asymp;4 ¢/s <span class="chip chip-a">A</span></div>
+        </div>
+      </div>
+      <div class="priceline"><span class="fee">from € 2,900</span><span class="per">activation (hypothesis) with 500 try-ons/month included <span class="chip chip-e">E</span></span></div>
+      <div class="priceline"><span class="fee">from € 290</span><span class="per">monthly fee (included quota, extra € 0.09/try-on) <span class="chip chip-e">E</span></span></div>
+      <div class="split">
+        <div>
+          <h4>To validate before selling</h4>
+          <div class="item">Category and channel: e-commerce (person photo) versus in-store (tablet/Xstore) <span class="chip chip-q">?</span></div>
+          <div class="item">What the engine requires: inputs, photo counts, latency <span class="chip chip-q">?</span></div>
+        </div>
+        <div>
+          <h4>Usage</h4>
+          <div class="item">Generated try-on: <b>2&ndash;4 ¢/s</b>; &asymp;10 s per generation <span class="chip chip-a">A</span> &rarr; € 0.20&ndash;0.40</div>
+          <div class="item">3 API calls per model <span class="chip chip-a">A</span>; benchmark adoption 10&ndash;20% of eligible sessions <span class="chip chip-m">M</span></div>
+        </div>
+      </div>
+      <div class="bench">
+        <h4>Benchmarks</h4>
+        <p>Market APIs: <b>$0.02&ndash;0.10 per generation</b> <span class="chip chip-m">M</span>, GPU-seconds $0.0015&ndash;0.0108 <span class="chip chip-m">M</span>. Try-on studies: add-to-cart <b>33% vs 11%</b>, 6.7% purchase of the tried product <span class="chip chip-m">M</span> <span class="dim">(Genlook Q3-26, selection caveat)</span>. Engine: no internal GPU <span class="chip chip-a">A</span>; 92% mobile <span class="chip chip-m">M</span>.</p>
+      </div>
+    </div>
+
+    <div class="ctabanner">Combinations: agreed perimeter by perimeter, not a purchased "fixed bundle"</div>
+    <p class="small" style="margin-top:8px">Combinations can be tested live in the Simulator tab.</p>
+  </section>
+
+  <!-- REPLY EN -->
+  <section id="pan-reply-en" data-panel="reply" role="tabpanel" aria-label="Reply roles" hidden>
+    <span class="kicker">Collaboration scenarios</span>
+    <h2>Reply's roles — who does what, in three scenarios</h2>
+    <p class="lede">A, B and C are working configurations: none describes an already-reached agreement. Hours, costs and margins live in the Costs-by-level tab.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px" role="group" aria-label="Scenario">
+      <button type="button" class="scbtn" data-scenario="a" aria-pressed="true">A &middot; Referral</button>
+      <button type="button" class="scbtn" data-scenario="b" aria-pressed="false">B &middot; Resale</button>
+      <button type="button" class="scbtn" data-scenario="c" aria-pressed="false">C &middot; Resale + implementation</button>
+    </div>
+    <h3 style="margin-top:16px">Payment flows</h3>
+    <div id="mr-money-flow-en"></div>
+    <div id="mr-scenario-status-en" class="small" style="margin-top:12px"></div>
+    <h3>Responsibilities to assign before prices</h3>
+    <dl>
+      <div class="defrow"><dt>Sale and offer</dt><dd>Who qualifies, proposes, invoices and manages renewals — depends on the scenario.</dd></div>
+      <div class="defrow"><dt>Client setup</dt><dd>In C, Reply performs configuration and integrations of the perimeter it is enabled for; that needs enablement (tools, training [E]).</dd></div>
+      <div class="defrow"><dt>Asset production</dt><dd>Stays in Morfello Studio (Suprora): Reply's autonomy initially limited; full autonomy to validate <span class="chip chip-q">?</span></dd></div>
+      <div class="defrow"><dt>Product and support</dt><dd>Suprora: software updates and specialised support; Reply: first contact if it manages the client.</dd></div>
+      <div class="defrow"><dt>Data and usage</dt><dd>Who manages access, catalogue, measurement and input retention; usage visible to Reply and the client.</dd></div>
+    </dl>
+
+    <h3 style="margin-top:24px">Possible integrations with the Reply channels</h3>
+    <p class="lede">Two different platforms: <b>SFCC</b> serves mainly e-commerce; <b>Oracle Xstore</b> serves the physical store. They are two environments to integrate Morfello into, not one single product.</p>
+    <div class="intcard">
+      <h4><code>SFCC</code> Salesforce Commerce Cloud</h4>
+      <p><b>What it is.</b> Above all Salesforce B2C Commerce: the platform a brand uses to build and run its online store — catalogue, variants, prices, promotions, cart, checkout.</p>
+      <p><b>Use with Morfello (proposed):</b></p>
+      <ol style="padding-left:20px;font-size:13.5px;color:var(--body-grey)">
+        <li>The client opens a shoe page on the brand's site.</li>
+        <li>They click "View in 3D", "Personalise" or "Try virtually".</li>
+        <li>Morfello runs that experience.</li>
+        <li>The client returns to the site's normal purchase path.</li>
+      </ol>
+      <p><b>"Morfello–SFCC connector"</b> = an integration linking the Morfello experience to the catalogue's products and variants, possibly the cart. It does <b>not</b> mean rebuilding the e-commerce.</p>
+    </div>
+    <div class="intcard">
+      <h4><code>XSTORE</code> Oracle Retail Xstore Point of Service</h4>
+      <p><b>What it is.</b> The till and store-operations software: sales, payments, receipts, returns, item search and other store jobs. It is not simply the banking terminal to pay by card; it runs on fixed stations and mobile devices.</p>
+      <p><b>Use with Morfello (proposed):</b></p>
+      <ol style="padding-left:20px;font-size:13.5px;color:var(--body-grey)">
+        <li>The clerk shows a product on a tablet.</li>
+        <li>The client views it in 3D, configures it or uses the Try-On.</li>
+        <li>The selected product enters the store's sale flow, if the integration allows it.</li>
+      </ol>
+      <p><b>"Xstore companion app"</b> = a supporting application for the in-store experience, connected to existing systems — not necessarily a modification inside the till software.</p>
+    </div>
+    <div class="callout navy"><b>For the meeting with Reply.</b> The message: <b>Morfello adds a product experience to the systems their clients already use, without asking to replace them</b>. Reply could handle integration and the client's processes; Suprora the Morfello engine — a possible split of roles, still to be agreed.
+      <p class="quoteline">&laquo;On which of your clients would a first pilot make more sense: a Try-On in the Salesforce e-commerce, or assisted selling in store within the Oracle Xstore ecosystem?&raquo;</p>
+    </div>
+  </section>
+
+  <!-- COSTS EN -->
+  <section id="pan-costi-en" data-panel="costi" role="tabpanel" aria-label="Costs by level" hidden>
+    <span class="kicker">Five levels, four sources</span>
+    <h2>Costs: level by level, with the information we have</h2>
+    <p class="lede">Every table uses the same four columns: <span class="chip chip-a">A</span> real figures from Amir; <span class="chip chip-e">E</span> Suprora estimate = Amir's hours +15%; <span class="chip chip-m">M</span> published benchmarks; <span class="chip chip-q">?</span> still to measure. Where Amir provided hours only, the cost applies the <b>actual €12/h rate</b> [A]; alternatives: €16&ndash;20/h median, €47.5/h assumption (see the box below).</p>
+    <div class="callout navy"><b>List-price rules (for the client offer &mdash; not here).</b> The list lives in the offer tabs (for Morfello 3D Configurator: <b>4 methods compared</b>); this tab handles <b>internal costs</b> only. Rules used: setup = internal cost &times; 1.35&ndash;1.57 [E] &middot; monthly fee = hosting (≈€ 10&ndash;15/m [M]) + support + included AI &middot; add-on margins deliberately thin (€ 90 colour variant, € 0.09 extra try-on) &middot; <b>estimates [E]</b> = Amir's hours +15%.</div>
+
+    <h3>1 &middot; Product development (R&amp;D, one-off)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Item</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Amir +15%</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; To measure</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Morfello Studio</b> — pipeline (6 months, 8 half-months of real effort)</td><td class="num">720&ndash;1000 h &asymp; <b>€ 8.6&ndash;12k</b> [A]</td><td class="num">828&ndash;1150 h &asymp; <b>€ 9.9&ndash;13.8k</b> [E]</td><td class="num">first lots at agencies: $200&ndash;2,000/sku [M]</td><td class="dim">remaining development hours [?]</td></tr>
+          <tr><td><b>Morfello 3D Configurator</b> — platform (1 month)</td><td class="num">240 h &asymp; <b>€ 2.9k</b> [A]</td><td class="num">276 h &asymp; <b>€ 3.3k</b> [E]</td><td class="num">full rebuild <b>€ 12&ndash;35k</b> [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Morfello Virtual Try-On</b> — engine (built by Dcart)</td><td class="num">10 h &asymp; <b>€ 120</b> [A]</td><td class="num">11.5 h &asymp; <b>€ 138</b> [E]</td><td class="num">API alternative $0.02&ndash;0.10/generation [M]</td><td class="dim">engine replacement cost if we leave Dcart [?]</td></tr>
+          <tr><td><b>AI dev tools</b> (shared)</td><td class="num">&ge;50% of usage on Morfello (6 months); &gt;70% Claude Code [A]</td><td class="dim">&mdash;</td><td class="num">$10&ndash;200/seat/m; full stack $200&ndash;600/developer/m [M]</td><td class="dim">dev vs runtime split from dashboards [?]</td></tr>
+          <tr><td><b>Expenses incurred</b></td><td class="num">AWS &asymp;€ 500 in credits (imprecise mix); APIs &asymp;€ 300 (to verify) [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">item-by-item breakdown [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2 &middot; Reply enablement (once, per channel)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Item</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Suprora estimate</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; To measure</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Training + tools</b></td><td class="dim">&mdash; not provided</td><td class="num"><b>40&ndash;80 h &asymp; € 0.5&ndash;1.0k</b> [E @ €12/h]</td><td class="dim">&mdash;</td><td class="dim">autonomous perimeter per offer [?]</td></tr>
+          <tr><td><b>Test environments</b></td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="num">&asymp;€ 10&ndash;15/m [M]</td><td class="dim">how many and for how long [?]</td></tr>
+          <tr><td><b>Recovery</b></td><td class="dim">&mdash;</td><td class="dim">the cost pays off with &asymp;2&ndash;3 first channel sales [E]</td><td class="dim">&mdash;</td><td class="dim">validation with Reply [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3 &middot; Client activation (per new client and perimeter)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Item</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Suprora estimate</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; To measure</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Morfello 3D Configurator activation</b> (base perimeter)</td><td class="dim">&mdash; not yet provided [?]</td><td class="num"><b>&asymp;80&ndash;150 h &asymp; € 1.0&ndash;1.8k</b> [E @ €12/h]</td><td class="num">$4&ndash;10k single-product build [M]</td><td class="dim">real hours per client type [?]</td></tr>
+          <tr><td><b>Morfello Virtual Try-On activation</b> (category + channel)</td><td class="dim">&mdash; [?]</td><td class="num"><b>&asymp;30 h &asymp; € 360</b> [E @ €12/h]</td><td class="dim">&mdash;</td><td class="dim">hours for other categories/channels [?]</td></tr>
+          <tr><td><b>Morfello Studio starter kit</b> (pipeline + material library + first model)</td><td class="num">model 1&ndash;2 h (shoes) / &ge;10 h (bags) [A]</td><td class="num">+15% &mdash; details in Asset production [E]</td><td class="num">$200&ndash;2,000 first model at agencies [M]</td><td class="dim">total kit hours [?]</td></tr>
+          <tr><td><b>Client-perimeter add-on</b> (extra channel or brand)</td><td class="dim">&mdash;</td><td class="num"><b>&asymp;10&ndash;14 h &asymp; € 125&ndash;170</b> [E @ €12/h]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4 &middot; Asset production (per lot, model, material and variant)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Item</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Amir +15%</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; To measure</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>First model &mdash; simple shoe</b></td><td class="num"><b>1&ndash;2 h</b> &asymp; € 12&ndash;24 [A]</td><td class="num">1.2&ndash;2.3 h &asymp; € 14&ndash;28 [E]</td><td class="num">10&ndash;28 h (shoes at agencies) [M]</td><td class="dim">variability per model [?]</td></tr>
+          <tr><td><b>First model &mdash; bag / clothes</b></td><td class="num"><b>&ge;10 h</b> &asymp; &ge;€ 120 [A]</td><td class="num">&ge;11.5 h &asymp; &ge;€ 138 [E]</td><td class="num">12&ndash;32 h (fashion goods) [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Next model</b> (segmentation is not reused)</td><td class="num">almost as much as the first [A]</td><td class="num">+15% [E]</td><td class="num">most studios reuse 40&ndash;70% [E/M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Variant with special configuration</b> (e.g. backrest, LIDMAG sizes)</td><td class="num"><b>3&ndash;5 h</b> &asymp; € 36&ndash;60 [A]</td><td class="num">3.5&ndash;5.8 h [E]</td><td class="num">$20&ndash;80 texture swap only [M]</td><td class="dim">rework types [?]</td></tr>
+          <tr><td><b>New material / texture</b></td><td class="num"><b>1 h</b> if quality is excellent; <b>3 h</b> if better images are needed &asymp; € 12&ndash;36 [A]</td><td class="num">1.2&ndash;3.5 h [E]</td><td class="num">10&ndash;20 min&hellip;1 h simple; 8&ndash;12 h svBRDF [M]</td><td class="dim">variation per category [?]</td></tr>
+          <tr><td><b>AI model generation</b> (third-party calls)</td><td class="num"><b>€ 1</b> median / <b>€ 2</b> max per model [A]</td><td class="dim">&mdash; real market costs</td><td class="num">Meshy 20&ndash;35 credits &asymp; $0.40&ndash;0.70 [M]</td><td class="dim">&mdash;</td></tr>
+          <tr><td><b>Segmentation (third-party call)</b></td><td class="num"><b>€ 0.40&ndash;1.00</b> [A] &mdash; unit probably per product [?]</td><td class="dim">&mdash;</td><td class="num">$0.01&ndash;0.03 per image [M]</td><td class="dim">common unit [?]</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5 &middot; Run over time (per client and per month)</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr>
+          <th>Item</th>
+          <th>A &middot; Amir</th>
+          <th>E &middot; Suprora estimate</th>
+          <th>M &middot; Benchmark</th>
+          <th>? &middot; To measure</th>
+        </tr></thead>
+        <tbody>
+          <tr><td><b>Hosting &amp; CDN</b></td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="num">&asymp;€ 10&ndash;15/m (R2 $0 egress, CDN $0.01/GB) [M]</td><td class="dim">real usage [?]</td></tr>
+          <tr><td><b>Support &amp; maintenance</b></td><td class="dim">&mdash;</td><td class="num">2&ndash;5 h/m &asymp; € 24&ndash;60 [E @ €12/h]</td><td class="dim">&mdash;</td><td class="dim">real hours per tier [?]</td></tr>
+          <tr><td><b>VTO at usage</b></td><td class="num"><b>2&ndash;4 &cent;/s</b> (high&lt;low latency) &rarr; € 0.20&ndash;0.40 per generation (&asymp;10 s); 3 API calls per model [A]</td><td class="num">+15% buffer on consumption <span class="small">[E]</span></td><td class="num">$0.02&ndash;0.10/generation [M]</td><td class="dim">latency class per channel [?]</td></tr>
+          <tr><td><b>Client-side traffic</b></td><td class="num">almost every visit calls the backend; estimate <b>1&ndash;2M/month</b>, insufficient data [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">metrics from logs [?]</td></tr>
+          <tr><td><b>No per-client operating cost</b></td><td class="num">not self-hosted, no dedicated maintenance [A]</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td><td class="dim">&mdash;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><b>In short.</b> Amir's real hours sit far below the market ("1 shoe = 2 hours" is not an estimation error: it is automation). The most defensible valuation of the sunk investment: <b>970&ndash;1250 h &asymp; € 11.6&ndash;15k</b> [A], <b>€ 13.4&ndash;17.3k</b> with buffer [E]. Still missing: hours for the new client, remaining development hours, the segmentation unit, real usage [?].</div>
+  </section>
+
+  <!-- SIM EN -->
+  <section id="pan-sim-en" data-panel="sim" role="tabpanel" aria-label="Simulator" hidden>
+    <span class="kicker">For the discussions</span>
+    <h2>Combination simulator</h2>
+    <p class="lede">Switch the offers included in the supply, move the rate and the partner discount: price, margin and payback recalculate.</p>
+    <div class="simgrid">
+      <div>
+        <div class="simopts" role="group" aria-label="Included offers">
+          <button type="button" class="optbtn" data-off="studio" aria-pressed="false">Morfello Studio kit</button>
+          <button type="button" class="optbtn" data-off="config" aria-pressed="true">Configurator</button>
+          <button type="button" class="optbtn" data-off="vto" aria-pressed="true">Virtual Try-On</button>
+        </div>
+        <div class="inp">
+          <label>Internal rate €/h: <b data-lbl="rate">47.5</b></label>
+          <input type="range" data-kind="rate" min="10" max="60" step="0.5" value="47.5">
+          <span class="small">€45&ndash;50 = "generous" assumption &middot; €16&ndash;20 = IT median &middot; €10&ndash;12 = Suprora actual [A]</span>
+        </div>
+        <div class="inp">
+          <label>Partner discount on setup: <b data-lbl="part">0%</b></label>
+          <input type="range" data-kind="part" min="0" max="20" step="2.5" value="0">
+          <span class="small">0% = Suprora sells direct; 10% = Reply-channel hypothesis; applies to the activation only</span>
+        </div>
+        <div class="inp">
+          <label>Reply enablement hours: <b data-lbl="ab">0</b></label>
+          <input type="range" data-kind="ab" min="0" max="80" step="4" value="0">
+          <span class="small">40&ndash;80 h if Reply must be autonomous on the configurator [E] &mdash; reduces the year-1 margin</span>
+        </div>
+      </div>
+      <div>
+        <div class="simout">
+          <div class="big" data-out="year1">€ 0</div>
+          <div style="font-size:12px;color:#C3CCDC;margin-bottom:8px">Suprora's one-off margin with this supply, before Reply's enablement</div>
+          <div class="ln"><span>Setup: client / partner</span><b data-out="sp">&ndash;</b></div>
+          <div class="ln"><span>Monthly fee / cost</span><b data-out="mm">&ndash;</b></div>
+          <div class="ln"><span>Monthly fee margin</span><b data-out="sm">&ndash;</b></div>
+          <div class="ln"><span>Setup payback via the monthly margin</span><b data-out="pb">&ndash;</b></div>
+        </div>
+        <p class="small" style="margin-top:8px">Activation hours are benchmark estimates [E]; with Amir's numbers the internal cost falls (see Costs by level). Missing: per-client hours [?], real usage [?].</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div style="max-width:1040px;margin:0 auto 40px;padding:0 16px;color:var(--muted);font-size:12px" class="foot">
+  <span class="s-en">Morfello · Offers and numbers v3 &mdash; for the Reply discussion and the scenarios with Sabrina &middot; 8 November 2026 &middot; real data from Amir (8 Nov) and the benchmarks research 2026-11-07 &middot; single file with no dependencies, print-ready (Ctrl+P)</span>
+</div>
+<script>
+(() => {
+  /* ---------- tab logic (both languages share the same panel selection) ---------- */
+  const tabs = [...document.querySelectorAll(".tabbtn")];
+  function activate(btn){
+    tabs.forEach(t => t.setAttribute("aria-selected", String(t === btn)));
+    const p = btn.dataset.panel;
+    document.querySelectorAll(".lang section[data-panel]").forEach(s => s.hidden = s.dataset.panel !== p);
+  }
+  tabs.forEach(t => t.addEventListener("click", () => activate(t)));
+  activate(tabs[0]);
+
+  /* ---------- language switching ---------- */
+  function setLang(l){
+    document.body.dataset.lang = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll(".lang").forEach(el => el.hidden = el.dataset.lang !== l);
+    document.querySelectorAll(".langbtn").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === l)));
+    document.title = l === "it" ? "Morfello · Offerte e numeri — v3" : "Morfello · Offers and numbers — v3";
+    try{ localStorage.setItem("morfello-lang", l); }catch(e){}
+  }
+  document.querySelectorAll(".langbtn").forEach(b =>
+    b.addEventListener("click", () => setLang(b.dataset.lang)));
+  let saved = null; try{ saved = localStorage.getItem("morfello-lang"); }catch(e){}
+  setLang(saved === "en" ? "en" : "it");
+
+  /* ---------- Reply payment flows (no amounts; per-language hosts) ---------- */
+  const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const scenarios = {
+    a: { nodes: [["Cliente","Buys the supply"],["Suprora","Sells and implements"],["Reply","Refers the client"]],
+         edges: ["Supply payment","Referral commission"],
+         statusIt: "Commissione di segnalazione: base e percentuale da concordare [ipotesi -10% sul setup].",
+         statusEn: "Referral commission: basis and percentage to be agreed (-10% on setup hypothesis).",
+         roles: [
+           ["Sale & invoicing","To the final client","Commercial introduction"],
+           ["Technical implementation","Executes the agreed perimeter","Agreed commercial tasks"],
+           ["Product & specialist services","Provides and runs","Role to be agreed"]
+         ] },
+    b: { nodes: [["Cliente","Buys from Reply"],["Reply","Resells the supply"],["Suprora","Executes the technical part"]],
+         edges: ["Final price","Partner price"],
+         statusIt: "Prezzo partner e servizi propri di Reply: voci distinte, da concordare.",
+         statusEn: "Partner price and Reply's own services: separate items, to be agreed.",
+         roles: [
+           ["Sale & invoicing","To Reply","To the final client"],
+           ["Technical implementation","Executes the agreed perimeter","Coordinates the relationship"],
+           ["Additional services","Only those assigned","Any services of its own"]
+         ] },
+    c: { nodes: [["Cliente","Buys from Reply"],["Reply","Resells and implements"],["Suprora","Product and specialists"]],
+         edges: ["Final price + services","Partner price"],
+         statusIt: "Reply esegue il perimetro per cui è abilitata: serve documentazione, formazione e strumenti (Costi, livello 2).",
+         statusEn: "Reply runs the perimeter it is enabled for: documentation, training and tools required (Costs, level 2).",
+         roles: [
+           ["Sale & invoicing","To Reply","To the final client"],
+           ["Configuration & integrations","Residue activities assigned","Perimeter of its enablement"],
+           ["Studio & specialist support","Assigned activities + product","Autonomy to verify"]
+         ] }
+  };
+  let currentScenario = "a";
+  function drawFlow(){
+    ["it","en"].forEach(l => {
+      const target = document.getElementById("mr-money-flow-" + l);
+      if (!target) return;
+      const width = Math.floor(target.getBoundingClientRect().width);
+      if (width < 1) return;
+      const d = scenarios[currentScenario];
+      const vertical = width < 540;
+      const height = vertical ? 330 : 170;
+      const gap = vertical ? 0 : Math.max(24, width * 0.08);
+      const nodeW = vertical ? Math.min(270, width - 24) : (width - gap * 2) / 3;
+      const nodeH = 66;
+      const positions = d.nodes.map((_, i) => vertical ? { x: (width - nodeW) / 2, y: i * 122 + 5 } : { x: i * (nodeW + gap), y: 71 });
+      const label = (n) => l === "it"
+        ? n[0] : ({"Cliente":"Client","Buys the supply":"Buys the supply","Suprora":"Suprora","Sells and implements":"Sells and implements","Reply":"Reply","Refers the client":"Refers the client","Buys from Reply":"Buys from Reply","Resells the supply":"Resells the supply","Executes the technical part":"Executes the technical part","Resells and implements":"Resells and implements","Product and specialists":"Product and specialists"}[n[1]] || n[1]);
+      const sub = (n) => l === "it" ? n[1] : ({"Buys the supply":"Acquista la fornitura","Sells and implements":"Vende e implementa","Refers the client":"Segnala il cliente","Buys from Reply":"Acquista da Reply","Resells the supply":"Rivende la fornitura","Executes the technical part":"Esegue la parte tecnica","Resells and implements":"Rivende e implementa","Product and specialists":"Prodotto e specialisti"}[n[1]] || "");
+      const edgeLabels = l === "it" ? ({"Supply payment":"Pagamento fornitura","Referral commission":"Commissione segnalazione","Final price":"Prezzo finale","Partner price":"Prezzo partner","Final price + services":"Prezzo finale + servizi"}[d.edges[0]] || d.edges[0]) : d.edges[0];
+      const edgeLabel2 = l === "it" ? ({"Supply payment":"Pagamento fornitura","Referral commission":"Commissione segnalazione","Final price":"Prezzo finale","Partner price":"Prezzo partner","Final price + services":"Prezzo finale + servizi"}[d.edges[1]] || d.edges[1]) : d.edges[1];
+      const labels = [edgeLabels, edgeLabel2];
+      const nodeHtml = d.nodes.map((n, i) => {
+        const { x, y } = positions[i];
+        return '<rect x="' + x + '" y="' + y + '" width="' + nodeW + '" height="' + nodeH + '" rx="10" fill="rgba(7,19,48,.08)"/>' +
+          '<text x="' + (x + nodeW / 2) + '" y="' + (y + 26) + '" text-anchor="middle" font-weight="600">' + escape(label(n)) + '</text>' +
+          '<text x="' + (x + nodeW / 2) + '" y="' + (y + 47) + '" text-anchor="middle" class="sub">' + escape(sub(n)) + '</text>';
+      }).join('');
+      const edgeHtml = labels.map((label, i) => {
+        const a = positions[i], b = positions[i + 1];
+        if (vertical) {
+          const x = width / 2, y1 = a.y + nodeH + 6, y2 = b.y - 7;
+          return '<path d="M' + x + ',' + y1 + ' L' + x + ',' + y2 + '" stroke="var(--muted)" stroke-width="1.4" fill="none"/>' +
+            '<path d="M' + (x - 4) + ',' + (y2 - 5) + ' L' + x + ',' + y2 + ' L' + (x + 4) + ',' + (y2 - 5) + '" stroke="var(--muted)" stroke-width="1.4" fill="none"/>' +
+            '<text x="' + (x + 10) + '" y="' + ((y1 + y2) / 2 + 3) + '" text-anchor="start" class="sub">' + escape(label) + '</text>';
+        }
+        const x1 = a.x + nodeW + 6, x2 = b.x - 6, y = a.y + nodeH / 2;
+        return '<path d="M' + x1 + ',' + y + ' L' + x2 + ',' + y + '" stroke="var(--muted)" stroke-width="1.4" fill="none"/>' +
+          '<path d="M' + (x2 - 5) + ',' + (y - 4) + ' L' + x2 + ',' + y + ' L' + (x2 - 5) + ',' + (y + 4) + '" stroke="var(--muted)" stroke-width="1.4" fill="none"/>' +
+          '<text x="' + ((x1 + x2) / 2) + '" y="' + (y - 9) + '" text-anchor="middle" class="sub">' + escape(label) + '</text>';
+      }).join('');
+      target.innerHTML = '<svg class="mr-flow-svg" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-label="Payment flow scenario ' + currentScenario.toUpperCase() + '">' + edgeHtml + nodeHtml + '</svg>';
+    });
+  }
+  function setScenario(key){
+    currentScenario = key;
+    document.querySelectorAll("[data-scenario]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.scenario === key)));
+    document.getElementById("mr-scenario-status-it").textContent = scenarios[key].statusIt;
+    document.getElementById("mr-scenario-status-en").textContent = scenarios[key].statusEn;
+    document.querySelectorAll(".lang").forEach(layer => {
+      const tbody = layer.querySelector("table.mr-responsibilities tbody");
+      if (tbody) tbody.innerHTML = scenarios[key].roles.map(r =>
+        '<tr><td><b>' + escape(r[0]) + '</b></td><td>' + escape(r[1]) + '</td><td>' + escape(r[2]) + '</td></tr>').join('');
+    });
+    drawFlow();
+  }
+  document.querySelectorAll("[data-scenario]").forEach(b =>
+    b.addEventListener("click", () => setScenario(b.dataset.scenario)));
+  new ResizeObserver(drawFlow).observe(document.getElementById("mr-money-flow-it"));
+  window.addEventListener("resize", drawFlow);
+  setScenario("a");
+
+  /* ---------- responsibilities table markup ---------- */
+  document.querySelectorAll(".lang").forEach(layer => {
+    const tbl = layer.querySelector("table.mr-responsibilities");
+    if (tbl) tbl.innerHTML =
+      '<thead><tr><th scope="col">Attivit&agrave;</th><th scope="col">Suprora</th><th scope="col">Reply</th></tr></thead><tbody></tbody>';
+  });
+
+  /* ---------- simulator (scoped per language layer) ---------- */
+  const OFF = {
+    studio: { setup: 2700, scost: 1900, monthly: 0,   mcost: 0 },
+    config: { setup: 6900, scost: 4988, monthly: 179, mcost: 119 },
+    vto:    { setup: 2900, scost: 1425, monthly: 290, mcost: 140 }
+  };
+  const SAV_SETUP = { "config|studio": 700, "config|vto": 900, "studio|vto": 400, "config|studio|vto": 1600 };
+  const SAV_MONTH = { "config|vto": 50, "config|studio|vto": 90, "studio|vto": 30 };
+
+  document.querySelectorAll(".lang").forEach(layer => {
+    const q = s => layer.querySelector(s);
+    const state = { sel: new Set(["config", "vto"]), rate: 47.5, part: 0, abH: 0 };
+    function fmt(n){
+      return "\u20AC " + Math.round(n).toLocaleString(document.body.dataset.lang === "en" ? "en-US" : "it-IT");
+    }
+    function sim(){
+      let setup = 0, scost = 0, monthly = 0, mcost = 0;
+      const k = [...state.sel].sort().join("|");
+      const sav = SAV_SETUP[k] || 0, savM = SAV_MONTH[k] || 0;
+      state.sel.forEach(o => { setup += OFF[o].setup; scost += OFF[o].scost; monthly += OFF[o].monthly; mcost += OFF[o].mcost; });
+      setup -= sav; scost -= sav;      /* shared activities: less price AND less cost */
+      monthly -= savM; mcost -= savM;
+      const setupNet = setup * (1 - state.part / 100);
+      const ab = state.abH * state.rate;
+      const mMargin = monthly - mcost;
+      const months = mMargin > 0 ? Math.ceil(scost / mMargin) : Infinity;
+      const year1 = setupNet - scost - ab + 12 * mMargin;
+      q('[data-lbl="rate"]').textContent = state.rate.toLocaleString(document.body.dataset.lang === "en" ? "en-US" : "it-IT");
+      q('[data-lbl="part"]').textContent = state.part.toLocaleString(document.body.dataset.lang === "en" ? "en-US" : "it-IT") + "%";
+      q('[data-lbl="ab"]').textContent = state.abH;
+      q('[data-out="year1"]').textContent = fmt(year1);
+      q('[data-out="sp"]').textContent = fmt(setupNet) + " / " + fmt(setup);
+      q('[data-out="mm"]').textContent = state.sel.size && monthly ? (fmt(monthly) + " / " + fmt(mcost)) : "—";
+      q('[data-out="sm"]').textContent = state.sel.size && monthly ? (fmt(mMargin) + "/m") : "—";
+      q('[data-out="pb"]').textContent = monthly ? (isFinite(months) ? months + " " + (document.body.dataset.lang === "en" ? "months" : "mesi") : (document.body.dataset.lang === "en" ? "never at these prices" : "mai a questi prezzi")) : "n/a";
+    }
+    layer.querySelectorAll(".optbtn").forEach(b => b.addEventListener("click", () => {
+      const off = b.dataset.off;
+      const on = b.getAttribute("aria-pressed") === "true";
+      if (on && state.sel.size === 1) return;
+      b.setAttribute("aria-pressed", String(!on));
+      if (on) state.sel.delete(off); else state.sel.add(off);
+      sim();
+    }));
+    layer.querySelectorAll('input[type="range"]').forEach(r => r.addEventListener("input", () => {
+      state.rate = parseFloat(layer.querySelector('[data-kind="rate"]').value);
+      state.part = parseFloat(layer.querySelector('[data-kind="part"]').value);
+      state.abH = parseInt(layer.querySelector('[data-kind="ab"]').value, 10);
+      sim();
+    }));
+    sim();
+  });
+})();
+</script>
+</body>
+</html>
